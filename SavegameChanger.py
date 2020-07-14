@@ -4,6 +4,22 @@ from shutil import copy, move
 import datetime
 
 
+class profile:
+    counter = 0
+
+    def __init__(self, name, number, path):
+        if name or number or path is None:
+            print("")
+            #todo constructor for object from files or .ini
+            return
+        else:
+            # constructor for objects from prompt
+            self.name = name
+            self.number = number
+            self.path = path
+            counter +=1
+
+
 # moves the correct profile into the game folder
 def move_files(variables, variables_backup):
     backup_files(variables_backup)
@@ -86,6 +102,7 @@ def setup_ini():
 initialized = initialize_program()
 print("What would you like to do? ")
 print("To rerun the initial setup delete or move the .ini file.")
+print("the currently active Profile is named {}".format(check_active()))
 print("0 exit")
 i = 0
 for profile, name, path in initialized:
