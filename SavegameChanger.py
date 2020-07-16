@@ -94,7 +94,7 @@ def check_active():
 def prompt(profiles_local):
     print("What would you like to do? ")
     print("To rerun the initial setup delete or move the .ini file.")
-    print("the currently active Profile is named {}".format(check_active()))
+    print("the currently active Profile is number {} named {}".format(check_active(), get_profile(profiles_local, check_active()).name))
     print("0 exit")
     i = 0
     for profile in profiles_local:
