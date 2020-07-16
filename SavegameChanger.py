@@ -4,20 +4,19 @@ from shutil import copy, move
 import datetime
 
 
-class profile:
+class Profile:
     counter = 0
 
     def __init__(self, name, number, path):
         if name or number or path is None:
             print("")
-            #todo constructor for object from files or .ini
-            return
+            # todo constructor for object from prompt
+            Profile.counter += 1
         else:
-            # constructor for objects from prompt
+            # constructor for objects from .ini
             self.name = name
             self.number = number
             self.path = path
-            counter +=1
 
 
 # moves the correct profile into the game folder
