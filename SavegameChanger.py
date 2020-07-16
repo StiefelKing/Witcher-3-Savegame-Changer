@@ -61,7 +61,7 @@ def backup_savegames(profile_local):
 
 def get_profile(profiles_local, number):
     for profile_local in profiles_local:
-        if profile_local.compare_number(number):
+        if int(profile_local.number) == number:
             return profile_local
 
 
@@ -115,7 +115,7 @@ def initialize_program():
             setup_ini()
     profiles_local = []
     for section in config.sections():
-        profiles_local.append(Profile(section, config[section]["name"], config[section]["path"]))
+        profiles_local.append(Profile(config[section]["name"], section, config[section]["path"]))
     return profiles_local
 
 
